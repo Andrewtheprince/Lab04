@@ -3,6 +3,8 @@ import flet as ft
 class View(object):
     def __init__(self, page: ft.Page):
         # Page
+        self._row1 = None
+        self._tendinaLingua = None
         self.page = page
         self.page.title = "TdP 2024 - Lab 04 - SpellChecker ++"
         self.page.horizontal_alignment = 'CENTER'
@@ -23,14 +25,27 @@ class View(object):
         self.__theme_switch = ft.Switch(label="Light theme", on_change=self.theme_changed)
         self.page.controls.append(
             ft.Row(spacing=30, controls=[self.__theme_switch, self.__title, ],
-                   alignment=ft.MainAxisAlignment.START)
+                   alignment=ft.MainAxisAlignment.CENTER)
         )
 
         # Add your stuff here
 
-        #self.page.add([])
+        self._tendinaLingua = ft.Dropdown(label="Selezionare lingua", width=500, options=[ft.dropdown.Option("Italiano"), ft.dropdown.Option("Inglese"), ft.dropdown.Option("Spagnolo")])
+        self._row1 = ft.Row(controls=[self._tendinaLingua], alignment=ft.MainAxisAlignment.CENTER)
+
+
+
+
+
+        self.page.add(self._row1)
 
         self.page.update()
+
+
+
+
+
+
 
     def update(self):
         self.page.update()
