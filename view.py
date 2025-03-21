@@ -28,7 +28,7 @@ class View(object):
 
         # Add your stuff here
 
-        self.page.add([])
+        #self.page.add([])
 
         self.page.update()
 
@@ -47,7 +47,5 @@ class View(object):
         self.__theme_switch.label = (
             "Light theme" if self.page.theme_mode == ft.ThemeMode.LIGHT else "Dark theme"
         )
-        # self.__txt_container.bgcolor = (
-        #     ft.colors.GREY_900 if self.page.theme_mode == ft.ThemeMode.DARK else ft.colors.GREY_300
-        # )
         self.page.update()
+

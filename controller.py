@@ -5,7 +5,7 @@ import model as md
 class SpellChecker:
 
     def __init__(self, view):
-        self._multiDic = md.MultiDictionary()
+        self._multiDic = md.MultiDictionary
         self._view = view
 
     def handleSentence(self, txtIn, language, modality):

@@ -1,14 +1,14 @@
 import flet as ft
 
-import controller as c
-import view as v
+from controller import SpellChecker
+from view import View
 
 
 def main(page: ft.Page):
     # Setup model, view, control according to MVC pattern
-    view = v.View(page)
-    controller = c.SpellChecker(view)
-    view.setController(controller)
-    view.add_content()
+    v = View(page)
+    c = SpellChecker(v)
+    v.setController(c)
+    v.add_content()
 
 ft.app(target=main)
